@@ -12,7 +12,7 @@ Please do not use this logger in production mode! For production use [pino](http
 
 ## Install
 
-`npm install --save-dev dev-logger`
+`npm install --save-dev @inveris/dev-logger`
 
 
 
