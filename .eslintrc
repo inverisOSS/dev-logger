@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "standard"
+  ],
+  "plugins": [
+    "mocha"
+  ],
+  "env": {
+    "node" : true,
+    "mocha": true
+  },
+  "rules": {
+    "array-bracket-spacing": 0,
+    "computed-property-spacing": 0,
+    "key-spacing": 0,
+    "max-len": [2, 120, 2],
+    "no-new": 0,
+    "no-prototype-builtins": 0,
+    "no-unneeded-ternary": "off",
+    "object-curly-spacing": [2, "always"],
+    "quotes": 0,
+    "space-before-function-paren": "off",
+    "space-in-parens": "off",
+    "space-unary-ops": "off",
+    "strict": 2
+  }
+}

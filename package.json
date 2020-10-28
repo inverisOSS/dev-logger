@@ -1,0 +1,51 @@
+{
+  "name": "@inveris/dev-logger",
+  "version": "1.0.0",
+  "description": "A console logger for development purpose with human readable output and easy modifiability.",
+  "author": "Peter Rottmann <rottmann@inveris.de>",
+  "license": "MIT",
+  "homepage": "https://github.com/inverisOSS/dev-logger",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/inverisOSS/dev-logger.git"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "coverage": "nyc npm run test",
+    "lint": "eslint examples lib test",
+    "test": "npm run lint && SILENT=true mocha --timeout 10000 --bail --exit --recursive test/**/*_test.js",
+    "test:watch": "nodemon -w lib -w test -e js --exec 'mocha --timeout 10000 --bail'"
+  },
+  "keywords": [
+    "console",
+    "debug",
+    "dev",
+    "development",
+    "log",
+    "logger",
+    "logging",
+    "loglevel",
+    "output"
+  ],
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "jsome": "^2.5.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^15.0.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-mocha": "^8.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.2",
+    "mocha": "^8.2.0",
+    "nodemon": "^2.0.6",
+    "nyc": "^15.1.0",
+    "strip-ansi": "^6.0.0"
+  }
+}

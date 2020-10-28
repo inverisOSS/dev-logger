@@ -1,0 +1,10 @@
+fixtures/
+node_modules/
+test/
+.git/
+.nyc_output/
+.eslintrc
+.gitignore
+.npmignore
+.npmrc
+.travis.yml
