@@ -48,18 +48,6 @@ log.info('with an array', arr)
 
 
 
-## Default Log-Levels
-
-* `trace`
-* `debug`
-* `info`
-* `success`
-* `warn` / `warning`
-* `error`
-* `fatal`
-
-
-
 ## Options
 
 `const log = new DevLogger(options)`
@@ -139,6 +127,44 @@ Options could be a string (group) or an object with the following settings:
 
 * `setLogLevel(level)`
   * `level` {number|string} The level from where the output is visible.
+
+
+
+## Default Log-Levels
+
+* `trace`
+* `debug`
+* `info`
+* `success`
+* `warn` / `warning`
+* `error`
+* `fatal`
+
+
+
+
+## Custom Log-Levels
+
+```js
+const DevLogger = require('@inveris/dev-logger')
+
+const log = new DevLogger({
+  levels: {
+    100: 'basic',
+    200: 'normal',
+    300: 'extended'
+  },
+  colors: {
+    basic: 'grey',
+    normal: 'green',
+    extended: 'yellow'
+  }
+})
+
+log.basic('basic message')
+log.normal('normal message')
+log.extended('extended message')
+```
 
 
 
