@@ -53,49 +53,49 @@ describe('Logger tests', () => {
       log = new Logger()
     })
 
-    it('log trace', async () => {
+    it('log trace', () => {
       log.trace('Trace')
       assert.equal(stripAnsi(output), 'TRACE Trace\n')
       assert.equal(output, cf.trace('TRACE') + ' ' + cf.trace('Trace') + '\n')
     })
 
-    it('log debug', async () => {
+    it('log debug', () => {
       log.debug('Debug')
       assert.equal(stripAnsi(output), 'DEBUG Debug\n')
       assert.equal(output, cf.debug('DEBUG') + ' ' + cf.debug('Debug') + '\n')
     })
 
-    it('log info', async () => {
+    it('log info', () => {
       log.info('Info')
       assert.equal(stripAnsi(output), 'INFO Info\n')
       assert.equal(output, cf.info('INFO') + ' ' + cf.info('Info') + '\n')
     })
 
-    it('log success', async () => {
+    it('log success', () => {
       log.success('Success')
       assert.equal(stripAnsi(output), 'SUCCESS Success\n')
       assert.equal(output, cf.success('SUCCESS') + ' ' + cf.success('Success') + '\n')
     })
 
-    it('log warn', async () => {
+    it('log warn', () => {
       log.warn('Warn')
       assert.equal(stripAnsi(output), 'WARN Warn\n')
       assert.equal(output, cf.warn('WARN') + ' ' + cf.warn('Warn') + '\n')
     })
 
-    it('log warning', async () => {
+    it('log warning', () => {
       log.warning('Warning')
       assert.equal(stripAnsi(output), 'WARN Warning\n')
       assert.equal(output, cf.warn('WARN') + ' ' + cf.warn('Warning') + '\n')
     })
 
-    it('log error', async () => {
+    it('log error', () => {
       log.error('Error')
       assert.equal(stripAnsi(output), 'ERROR Error\n')
       assert.equal(output, cf.error('ERROR') + ' ' + cf.error('Error') + '\n')
     })
 
-    it('log fatal', async () => {
+    it('log fatal', () => {
       log.fatal('Fatal')
       assert.equal(stripAnsi(output), 'FATAL Fatal\n')
       assert.equal(output, cf.fatal('FATAL') + ' ' + cf.fatal('Fatal') + '\n')
@@ -109,7 +109,7 @@ describe('Logger tests', () => {
       log = new Logger()
     })
 
-    it('with string', async () => {
+    it('with string', () => {
       log.trace('String', 'str')
       assert.equal(stripAnsi(output), 'TRACE String "str"\n')
       assert.equal(output,
@@ -118,7 +118,7 @@ describe('Logger tests', () => {
       )
     })
 
-    it('with number', async () => {
+    it('with number', () => {
       log.trace('Number', 4711)
       assert.equal(stripAnsi(output), 'TRACE Number 4711\n')
       assert.equal(output,
@@ -127,7 +127,7 @@ describe('Logger tests', () => {
       )
     })
 
-    it('with boolean', async () => {
+    it('with boolean', () => {
       log.trace('Boolean', true)
       assert.equal(stripAnsi(output), 'TRACE Boolean true\n')
       assert.equal(output,
@@ -136,7 +136,7 @@ describe('Logger tests', () => {
       )
     })
 
-    it('with regex', async () => {
+    it('with regex', () => {
       log.trace('RegEx', new RegExp('ab+c'))
       assert.equal(stripAnsi(output), 'TRACE RegEx\nTRACE /ab+c/\n')
       assert.equal(output,
@@ -145,7 +145,7 @@ describe('Logger tests', () => {
       )
     })
 
-    it('with undefined', async () => {
+    it('with undefined', () => {
       log.trace('Undefined', undefined)
       assert.equal(stripAnsi(output), 'TRACE Undefined\nTRACE undefined\n')
       assert.equal(output,
@@ -154,7 +154,7 @@ describe('Logger tests', () => {
       )
     })
 
-    it('with null', async () => {
+    it('with null', () => {
       log.trace('Null', null)
       assert.equal(stripAnsi(output), 'TRACE Null\nTRACE null\n')
       assert.equal(output,
@@ -163,7 +163,7 @@ describe('Logger tests', () => {
       )
     })
 
-    it('with array', async () => {
+    it('with array', () => {
       log.trace('Array', [ 'a', 'b' ])
       assert.equal(stripAnsi(output), 'TRACE Array\nTRACE ["a", "b"]\n')
       assert.equal(output,
@@ -175,7 +175,7 @@ describe('Logger tests', () => {
       )
     })
 
-    it('with object', async () => {
+    it('with object', () => {
       log.trace('Object', { a: 'b' })
       assert.equal(stripAnsi(output), 'TRACE Object\nTRACE {\nTRACE   a: "b"\nTRACE }\n')
       assert.equal(output,
@@ -186,7 +186,7 @@ describe('Logger tests', () => {
       )
     })
 
-    it('with multiple parameters - object, string, number', async () => {
+    it('with multiple parameters - object, string, number', () => {
       log.trace('Multiple', { a: 'b' }, 'str', 4711)
       assert.equal(stripAnsi(output),
         'TRACE Multiple\n' +
@@ -204,7 +204,7 @@ describe('Logger tests', () => {
       )
     })
 
-    it('with multiple parameters - string, object', async () => {
+    it('with multiple parameters - string, object', () => {
       log.trace('Multiple', 'str', { a: 'b' })
       assert.equal(stripAnsi(output),
         'TRACE Multiple "str"\n' +
@@ -220,7 +220,7 @@ describe('Logger tests', () => {
       )
     })
 
-    it('only regex', async () => {
+    it('only regex', () => {
       log.trace(new RegExp('ab+c'))
       assert.equal(stripAnsi(output), 'TRACE /ab+c/\n')
       assert.equal(output,
@@ -228,7 +228,7 @@ describe('Logger tests', () => {
       )
     })
 
-    it('only object', async () => {
+    it('only object', () => {
       log.trace({ a: 'b' })
       assert.equal(stripAnsi(output), 'TRACE {\nTRACE   a: "b"\nTRACE }\n')
       assert.equal(output,
@@ -238,7 +238,7 @@ describe('Logger tests', () => {
       )
     })
 
-    it('undefined', async () => {
+    it('undefined', () => {
       log.trace(undefined)
       assert.equal(stripAnsi(output), 'TRACE undefined\n')
       assert.equal(output,
@@ -254,13 +254,13 @@ describe('Logger tests', () => {
       log = new Logger()
     })
 
-    it('no output', async () => {
+    it('no output', () => {
       log.setLogLevel('info')
       log.trace('Trace')
       assert.equal(output, '') // empty, cause logLevel is `info`
     })
 
-    it('log info', async () => {
+    it('log info', () => {
       log.info('Info')
       assert.equal(stripAnsi(output), 'INFO Info\n')
       assert.equal(output, cf.info('INFO') + ' ' + cf.info('Info') + '\n')
@@ -292,7 +292,7 @@ describe('Logger tests', () => {
       log = new Logger()
     })
 
-    it('create new log methods and remove old', async () => {
+    it('create new log methods and remove old', () => {
       log.setLevels({
         100: 'basic',
         200: 'enhanced'
@@ -319,7 +319,7 @@ describe('Logger tests', () => {
       assert.equal(stripAnsi(output), 'ENHANCED Enhanced\n')
     })
 
-    it('should fail, not an object', async () => {
+    it('should fail, not an object', () => {
       try {
         log.setLevels('fail')
       } catch (err) {
@@ -336,7 +336,7 @@ describe('Logger tests', () => {
       log = new Logger('StringGroup')
     })
 
-    it('log trace', async () => {
+    it('log trace', () => {
       log.trace('Trace')
       assert.equal(stripAnsi(output), 'StringGroup\nTRACE Trace\n')
       assert.equal(output,
@@ -358,7 +358,7 @@ describe('Logger tests', () => {
       log.setGroup('OtherGroup1')
     })
 
-    it('set group', async () => {
+    it('set group', () => {
       log.setGroup('NewGroup1')
 
       log.trace('Trace')
@@ -369,7 +369,7 @@ describe('Logger tests', () => {
       )
     })
 
-    it('check previous group', async () => {
+    it('check previous group', () => {
       log.trace('Trace')
       assert.equal(stripAnsi(output), 'OtherGroup1\nTRACE Trace\n')
       assert.equal(output,
@@ -378,7 +378,7 @@ describe('Logger tests', () => {
       )
     })
 
-    it('without group', async () => {
+    it('without group', () => {
       const log = new Logger({
         withGroup: false
       })
@@ -390,7 +390,7 @@ describe('Logger tests', () => {
       )
     })
 
-    it('without group argument', async () => {
+    it('without group argument', () => {
       const log = new Logger()
       log.setGroup()
 
@@ -418,7 +418,7 @@ describe('Logger tests', () => {
       log.setName('OtherName1')
     })
 
-    it('set name', async () => {
+    it('set name', () => {
       log.setName('NewName1')
 
       log.trace('Trace')
@@ -426,13 +426,13 @@ describe('Logger tests', () => {
       assert.equal(output, cf.name('NewName1') + ' ' + cf.trace('TRACE') + ' ' + cf.trace('Trace') + '\n')
     })
 
-    it('check previous name', async () => {
+    it('check previous name', () => {
       log.trace('Trace')
       assert.equal(stripAnsi(output), 'OtherName1 TRACE Trace\n')
       assert.equal(output, cf.name('OtherName1') + ' ' + cf.trace('TRACE') + ' ' + cf.trace('Trace') + '\n')
     })
 
-    it('without name argument', async () => {
+    it('without name argument', () => {
       const log = new Logger()
       log.setName()
 
@@ -464,7 +464,7 @@ describe('Logger tests', () => {
       log.setName('OtherName2')
     })
 
-    it('set group', async () => {
+    it('set group', () => {
       log.setGroup('NewGroup2')
       log.setName('NewName2')
 
@@ -476,7 +476,7 @@ describe('Logger tests', () => {
       )
     })
 
-    it('check previous group', async () => {
+    it('check previous group', () => {
       log.trace('Trace')
       assert.equal(stripAnsi(output), 'OtherGroup2\nOtherName2 TRACE Trace\n')
       assert.equal(output,
@@ -485,7 +485,7 @@ describe('Logger tests', () => {
       )
     })
 
-    it('group should fail, not a string', async () => {
+    it('group should fail, not a string', () => {
       try {
         log.setGroup({})
       } catch (err) {
@@ -494,7 +494,7 @@ describe('Logger tests', () => {
       }
     })
 
-    it('name should fail, not a string', async () => {
+    it('name should fail, not a string', () => {
       try {
         log.setName({})
       } catch (err) {
@@ -516,7 +516,7 @@ describe('Logger tests', () => {
       log.setColors(colors)
     })
 
-    it('set colors', async () => {
+    it('set colors', () => {
       // change colors
       // use other names with the same color-value for test (too lazy to re-compile the color-functions `cf`)
       // e. g. change 'str ' to 'red' and check if it is 'bool' (which is also 'red')
@@ -556,7 +556,7 @@ describe('Logger tests', () => {
       )
     })
 
-    it('check previous colors', async () => {
+    it('check previous colors', () => {
       log.trace('Trace', 'str')
       assert.equal(stripAnsi(output), 'TRACE Trace "str"\n')
       assert.equal(output,
@@ -565,7 +565,7 @@ describe('Logger tests', () => {
       )
     })
 
-    it('should fail, not an object', async () => {
+    it('should fail, not an object', () => {
       try {
         log.setColors('blue')
       } catch (err) {
@@ -584,7 +584,7 @@ describe('Logger tests', () => {
       })
     })
 
-    it('log trace', async () => {
+    it('log trace', () => {
       log.trace('Trace')
 
       // Keep seconds and milliseconds from output
@@ -597,7 +597,7 @@ describe('Logger tests', () => {
   })
 
   describe('test formatter padding', () => {
-    it('pad start level name', async () => {
+    it('pad start level name', () => {
       const log = new Logger({
         padStartLevelName: true,
         padEndLevelName: false
@@ -610,7 +610,7 @@ describe('Logger tests', () => {
       )
     })
 
-    it('pad end level name', async () => {
+    it('pad end level name', () => {
       const log = new Logger({
         padStartLevelName: false,
         padEndLevelName: true
@@ -625,7 +625,7 @@ describe('Logger tests', () => {
   })
 
   describe('test formatter capitalization', () => {
-    it('upper case level name', async () => {
+    it('upper case level name', () => {
       const log = new Logger({
         upperCaseLevelName: true
       })
@@ -637,7 +637,7 @@ describe('Logger tests', () => {
       )
     })
 
-    it('lower case level name', async () => {
+    it('lower case level name', () => {
       const log = new Logger({
         upperCaseLevelName: false
       })
@@ -651,7 +651,7 @@ describe('Logger tests', () => {
   })
 
   describe('test extending formatter', () => {
-    it('extends output', async () => {
+    it('extends output', () => {
       /**
        * Custom extended Logger
        */
@@ -674,7 +674,7 @@ describe('Logger tests', () => {
       )
     })
 
-    it('extends formatter line', async () => {
+    it('extends formatter line', () => {
       /**
        * Custom extended Logger
        */
