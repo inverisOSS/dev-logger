@@ -1,6 +1,6 @@
 {
   "name": "@inveris/dev-logger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A console logger for development purpose with human readable output and easy modifiability.",
   "author": "Peter Rottmann <rottmann@inveris.de>",
   "license": "MIT",
