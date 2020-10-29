@@ -1,5 +1,7 @@
 # dev-logger
 
+[![npm version](https://badge.fury.io/js/%40inveris%2Fdev-logger.svg)](https://badge.fury.io/js/%40inveris%2Fdev-logger)
+
 A console logger for development purpose with human readable output and easy modifiability.
 
 ![](./fixtures/example1.png)
