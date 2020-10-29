@@ -2,7 +2,7 @@
 // With custom formatter
 //
 
-// const DevLogger = require('dev-logger')
+// const DevLogger = require('@inveris/dev-logger')
 const DevLogger = require('../lib')
 
 class MyLogger extends DevLogger {

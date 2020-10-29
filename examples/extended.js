@@ -2,7 +2,7 @@
 // Extended output examples
 //
 
-// const DevLogger = require('dev-logger')
+// const DevLogger = require('@inveris/dev-logger')
 const DevLogger = require('../lib')
 
 /**

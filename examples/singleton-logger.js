@@ -3,7 +3,7 @@
 // view `singleton.js` for usage
 //
 
-// const DevLogger = require('dev-logger')
+// const DevLogger = require('@inveris/dev-logger')
 const DevLogger = require('../lib')
 
 const log = new DevLogger(/* your options */)

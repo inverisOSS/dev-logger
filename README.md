@@ -21,7 +21,7 @@ Please do not use this logger in production mode! For production use [pino](http
 ## Usage
 
 ```js
-const DevLogger = require('dev-logger')
+const DevLogger = require('@inveris/dev-logger')
 
 const log = new DevLogger(__filename)
 
