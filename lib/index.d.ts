@@ -21,8 +21,8 @@ export interface Options {
   withName: boolean
 }
 
-export declare class Logger {
-  constructor(options?: Options)
+export default class Logger {
+  constructor(options?: Options | string)
   setColors(colors: Colors): void
   setGroup(group?: string): void
   setName(name?: string): void
@@ -38,4 +38,5 @@ export declare class Logger {
   private _createMethods(): void
   private _deleteMethods(): void
   private _getColorFunc(key: string): (content: string) => string
+  [args: string]: (...args: any[]) => void
 }

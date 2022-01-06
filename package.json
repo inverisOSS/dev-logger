@@ -1,6 +1,6 @@
 {
   "name": "@inveris/dev-logger",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A console logger for development purpose with human readable output and easy modifiability.",
   "author": "Peter Rottmann <rottmann@inveris.de>",
   "license": "MIT",
@@ -15,12 +15,9 @@
     "node": ">=12.0.0"
   },
   "files": [
-    "lib/index.js",
-    "lib/index.d.ts",
-    "lib/jsome/browser-style.js",
-    "lib/jsome/generator.js",
-    "lib/jsome/index.js"
+    "lib"
   ],
+  "types": "./lib/index.d.ts",
   "scripts": {
     "coverage": "nyc npm run test",
     "lint": "eslint examples lib test",
