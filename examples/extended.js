@@ -2,8 +2,11 @@
 // Extended output examples
 //
 
-// const DevLogger = require('@inveris/dev-logger')
-const DevLogger = require('../lib')
+// import DevLogger from '@inveris/dev-logger'
+import DevLogger from '../lib/index.js'
+
+import { fileURLToPath } from 'node:url'
+const __filename = fileURLToPath(import.meta.url)
 
 /**
  * With grouping and naming

@@ -3,8 +3,8 @@
 // view `singleton.js` for usage
 //
 
-// const DevLogger = require('@inveris/dev-logger')
-const DevLogger = require('../lib')
+// import DevLogger from '@inveris/dev-logger'
+import DevLogger from '../lib/index.js'
 
 const log = new DevLogger(/* your options */)
 
@@ -37,4 +37,4 @@ function getLogger(group /* your options */) {
   return methods
 }
 
-module.exports = getLogger
+export default getLogger

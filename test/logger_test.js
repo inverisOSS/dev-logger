@@ -1,11 +1,8 @@
-const assert = require('chai').assert
-const chalk = require('chalk')
-const stripAnsi = require('strip-ansi')
+import { assert } from 'chai'
+import chalk from 'chalk'
+import stripAnsi from 'strip-ansi'
 
-const Logger = require('../lib')
-const {
-  defaultColors: colors
-} = require('../lib')
+import Logger, { defaultColors as colors } from '../lib/index.js'
 
 // precompile color output functions for easier use in tests
 const cf = {} // color functions
@@ -137,7 +134,7 @@ describe('Logger tests', () => {
     })
 
     it('with regex', () => {
-      log.trace('RegEx', new RegExp('ab+c'))
+      log.trace('RegEx', new RegExp('' + 'ab+c'))
       assert.equal(stripAnsi(output), 'TRACE RegEx\nTRACE /ab+c/\n')
       assert.equal(output,
         cf.trace('TRACE') + ' ' + cf.trace('RegEx') + '\n' +
@@ -221,7 +218,7 @@ describe('Logger tests', () => {
     })
 
     it('only regex', () => {
-      log.trace(new RegExp('ab+c'))
+      log.trace(new RegExp('' + 'ab+c'))
       assert.equal(stripAnsi(output), 'TRACE /ab+c/\n')
       assert.equal(output,
         cf.trace('TRACE') + ' ' + cf.regex('/ab+c/') + '\n'

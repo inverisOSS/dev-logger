@@ -2,10 +2,10 @@
 // Use dev-logger with a single instance
 //
 
-const DevLogger = require('./singleton-logger')
+import SingletonLogger from './singleton-logger.js'
 
-const log1 = DevLogger('Group1')
-const log2 = DevLogger('Group2')
+const log1 = SingletonLogger('Group1')
+const log2 = SingletonLogger('Group2')
 
 log1.info('log1 message 1')
 log1.info('log1 message 2')

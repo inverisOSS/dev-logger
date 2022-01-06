@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/%40inveris%2Fdev-logger.svg)](https://badge.fury.io/js/%40inveris%2Fdev-logger)
 
-A console logger for development purpose with human readable output and easy modifiability.
+A ESM console logger for development purpose with human readable output and easy modifiability.
 
 ![](./fixtures/example1.png)
 
@@ -21,7 +21,7 @@ Please do not use this logger in production mode! For production use [pino](http
 ## Usage
 
 ```js
-const DevLogger = require('@inveris/dev-logger')
+import DevLogger from '@inveris/dev-logger'
 
 const log = new DevLogger(__filename)
 
@@ -146,7 +146,7 @@ Options could be a string (group) or an object with the following settings:
 ## Custom Log-Levels
 
 ```js
-const DevLogger = require('@inveris/dev-logger')
+import DevLogger from '@inveris/dev-logger'
 
 const log = new DevLogger({
   levels: {
@@ -181,21 +181,17 @@ More examples in [examples/](./examples/) directory.
 Example:
 
 ```js
-const pkg = require('./package.json')
+import DevLogger from '@inveris/dev-logger'
 
-const options = {
-  group: __filename,
-  logLevel: 'trace',
-  name: pkg.name,
+const log = new DevLogger('some id')
 
-  upperCaseLevelName: true,
-  padStartLevelName: false,
-  padEndLevelName: true,
-  withDate: true,
-  withGroup: true,
-  withName: true
-}
+log.setLogLevel('trace')
 
-const log = new DevLogger(options)
-log.info('Hello world!')
+log.trace('trace message')
+log.debug('debug message')
+log.info('info message')
+log.success('success message')
+log.warn('warn message')
+log.error('error message')
+log.fatal('fatal message')
 ```
