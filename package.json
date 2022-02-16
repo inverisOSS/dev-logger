@@ -1,6 +1,6 @@
 {
   "name": "@inveris/dev-logger",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "A console logger for development purpose with human readable output and easy modifiability.",
   "author": "Peter Rottmann <rottmann@inveris.de>",
   "license": "MIT",
@@ -9,8 +9,10 @@
     "type": "git",
     "url": "https://github.com/inverisOSS/dev-logger.git"
   },
-  "exports": "./lib/index.js",
-  "type": "module",
+  "exports": {
+    "require": "./lib/index.cjs",
+    "import": "./lib/index.mjs"
+  },
   "engines": {
     "node": ">=12.0.0"
   },
@@ -36,7 +38,7 @@
     "output"
   ],
   "dependencies": {
-    "chalk": "^5.0.0",
+    "chalk": "^4.1.2",
     "safe-stable-stringify": "^2.3.1"
   },
   "devDependencies": {
@@ -50,6 +52,6 @@
     "eslint-plugin-standard": "^4.1.0",
     "mocha": "^9.2.0",
     "nodemon": "^2.0.15",
-    "strip-ansi": "^7.0.1"
+    "strip-ansi": "^6.0.1"
   }
 }

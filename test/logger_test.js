@@ -1,8 +1,12 @@
-import { assert } from 'chai'
-import chalk from 'chalk'
-import stripAnsi from 'strip-ansi'
+const chai = require('chai')
+const chalk = require('chalk')
+const stripAnsi = require('strip-ansi')
 
-import Logger, { defaultColors as colors } from '../lib/index.js'
+const lib = require('../lib/index.cjs')
+
+const assert = chai.assert
+const Logger = lib.Logger
+const colors = lib.defaultColors
 
 // precompile color output functions for easier use in tests
 const cf = {} // color functions
