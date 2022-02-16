@@ -27,7 +27,7 @@ export default class Logger {
   setGroup(group?: string): void
   setName(name?: string): void
   setLevels(levels: Levels): void
-  setLogLevel(level: number): void
+  setLogLevel(level: number | string): void
   formatterInit(): void
   formatterOptions(level: number): void
   formatterGroup(group: string): string
