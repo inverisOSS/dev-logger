@@ -166,13 +166,13 @@ describe('Logger tests', () => {
 
     it('with array', () => {
       log.trace('Array', [ 'a', 'b' ])
-      assert.equal(stripAnsi(output), 'TRACE Array\nTRACE ["a", "b"]\n')
+      assert.equal(stripAnsi(output), 'TRACE Array\nTRACE [\nTRACE   "a",\nTRACE   "b"\nTRACE ]\n')
       assert.equal(output,
         cf.trace('TRACE') + ' ' + cf.trace('Array') + '\n' +
-        cf.trace('TRACE') + ' ' + cf.brack('[') +
-        cf.quot('"') + cf.str('a') + cf.quot('"') +
-        cf.punc(', ') + cf.quot('"') + cf.str('b') + cf.quot('"') +
-        cf.brack(']') + '\n'
+        cf.trace('TRACE') + ' ' + cf.brack('[') + '\n' +
+        cf.trace('TRACE') + '   ' + cf.quot('"') + cf.str('a') + cf.quot('"') + cf.punc(',') + '\n' +
+        cf.trace('TRACE') + '   ' + cf.quot('"') + cf.str('b') + cf.quot('"') + '\n' +
+        cf.trace('TRACE') + ' ' + cf.brack(']') + '\n'
       )
     })
 
